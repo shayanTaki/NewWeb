@@ -1,0 +1,89 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Port</title>
+    <link rel="stylesheet" href="~/css/style2.css">
+</head>
+<body>
+    <aside class="form">
+        <form method="post" action="/Home/LoginNew">
+            <table class="loginTable">
+                <tr class="title">
+                    <td class="titletxt">
+                        <img src="~/images/login-svgrepo-com-1.svg" alt="">
+                        <h2>ورود کاربر</h2>
+                    </td>
+                    <td>
+                        <h1>MIS</h1>
+                    </td>
+
+                </tr>
+                <tr class="usernameTitle">
+                    <td>
+                        <h3>
+                            نام کاربری
+                            
+                        </h3>
+                    </td>
+                </tr>
+                <tr class="userNInput">
+                    <td>
+                        <input type="text" name="username" placeholder="نام کاربری خود را وارد کنید">
+                    </td>
+                </tr>
+                <tr class="passwordTitle">
+                    <td>
+                        <h3>
+                            رمز عبور
+                        </h3>
+                    </td>
+                </tr>
+                <tr class="passWInput">
+                    <td>
+                        <input name="password" type="password" placeholder="رمزعبور خود را وارد کنید">
+                    </td>
+                </tr>
+                <tr class="cookie">
+                    <td>
+                        @*<input  name="" type="checkbox">*@
+                        <h3>
+                            @ViewData["Message"]
+                        </h3>
+                    </td>
+                </tr>
+                <tr class="submit">
+                    <td>
+                        <input type="submit" value="ورود">
+                    </td>
+                </tr>
+            </table>
+        </form>
+        <div class="date">
+            <img src="" alt="" class="calender">
+            <p></p>
+        </div>
+        <div class="IPadrees">
+            <p class="IP"></p>
+        </div>
+    </aside>
+    <img src="" alt="">
+    <aside class="background">
+        <img class="kmcFill kmc1" src="~/images/kmcpatternfill.svg" alt="">
+        <img class="kmcStrok kmc2" src="~/images/kmcpatternstrok.svg" alt="">
+        <img class="kmcFill kmc3" src="~/images/kmcpatternfill.svg" alt="">
+        <img class="kmcStrok kmc4" src="~/images/kmcpatternstrok.svg" alt="">
+        <img class="kmcFill kmc5" src="~/images/kmcpatternfill.svg" alt="">
+        <img class="kmcStrok kmc6" src="~/images/kmcpatternstrok.svg" alt="">
+        <img class="kmcFill kmc7" src="~/images/kmcpatternfill.svg" alt="">
+        <img class="kmcStrok kmc8" src="~/images/kmcpatternstrok.svg" alt="">
+    </aside>
+</body>
+</html>

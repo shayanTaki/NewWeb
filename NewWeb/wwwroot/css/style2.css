@@ -1,0 +1,396 @@
+﻿@font-face {
+    font-family: 'intnt';
+    src: url('../font/iranintl-medium.ttf');
+}
+
+@font-face {
+    font-family: 'intnt-s';
+    src: url('../font/iranintl-semibold.ttf');
+}
+
+@font-face {
+    font-family: 'intnt-b';
+    src: url('../font/iranintl-Bold.ttf');
+}
+
+
+body {
+    display: flex;
+    margin: 0%;
+    padding: 0%;
+    background-color: #14131D;
+}
+
+* {
+    font-family: 'intnt';
+}
+
+.form {
+    z-index: 1;
+    width: 50%;
+    height: 100vh;
+    background-color: #FFFBEC;
+    display: flex;
+    flex-direction: column;
+}
+
+form {
+    position: relative;
+    top: 20vh;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    /* background-color: aqua; */
+}
+
+.loginTable {
+    height: 100%;
+    width: 80%;
+}
+
+.titletxt {
+    display: inline-flex;
+}
+
+    .titletxt h2 {
+        font-family: 'intnt-b';
+        color: #333333;
+        font-size: 1.3vw;
+    }
+
+    .titletxt img {
+        width: 2.5vw;
+    }
+
+h1 {
+    background-color: #E7E4DA;
+    text-align: center;
+    border-radius: 1rem;
+    padding-left: 2vh;
+    padding-right: 2vh;
+    padding: 1vh;
+    font-size: 1.2vw;
+}
+
+h3 {
+    color: #333333;
+    font-size: 1vw;
+}
+
+.userNInput input {
+    width: 100%;
+    height: 4vh;
+    border-radius: 0.5vw;
+    background-color: #F1EBD6;
+    border: none;
+    padding: 2%;
+    padding-left: 5%;
+    padding-right: 5%;
+    font-size: 0.9vw;
+    color: #918971;
+}
+
+    .userNInput input:focus {
+        border: none;
+    }
+
+.passWInput input {
+    width: 100%;
+    height: 4vh;
+    border-radius: 0.5vw;
+    background-color: #F1EBD6;
+    border: none;
+    padding: 2%;
+    padding-left: 5%;
+    padding-right: 5%;
+    font-size: 0.9vw;
+    color: #918971;
+}
+
+.userNInput input::placeholder {
+    color: #918971;
+}
+
+.passWInput input::placeholder {
+    color: #918971;
+}
+
+.passWInput input:focus {
+    border: none;
+}
+
+.cookie td {
+    display: inline-flex;
+}
+
+    .cookie td tr input {
+        width: 1vw;
+    }
+
+.submit input {
+    width: 110%;
+    height: 5vh;
+    background-color: #333050;
+    color: white;
+    font-family: 'intnt-b';
+    font-size: 0.9vw;
+    border-radius: 0.5vw;
+    border: none;
+}
+
+.background {
+    width: 120%;
+    height: 100vh;
+    position: absolute;
+    left: 0vh;
+    background-color: #14131D;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    animation: showcase 2.5s 1.1s ease;
+    animation-fill-mode: forwards;
+    z-index: 1;
+}
+
+@keyframes showcase {
+    from {
+        width: 120%;
+        display: flex;
+    }
+
+    to {
+        width: 50%;
+    }
+}
+
+.background img {
+    position: relative;
+    /* display: none; */
+}
+
+.background.kmcStrok {
+    z-index: 3;
+}
+
+.background .kmcFill {
+    z-index: 1;
+    left: 10%;
+}
+
+
+.kmc1 {
+    position: relative;
+    animation: kmc1 2.5s 0.5s ease;
+    animation-fill-mode: forwards;
+    opacity: 0;
+    margin: 0%;
+}
+
+@keyframes kmc1 {
+    0% {
+        opacity: 1;
+    }
+
+    10% {
+        opacity: 0;
+        margin-left: 0;
+    }
+
+    90% {
+        opacity: 0;
+        /* margin-left: -200%; */
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.kmc2 {
+    position: relative;
+    animation: kmc2 2.5s 0.1s ease;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+@keyframes kmc2 {
+    0% {
+        opacity: 1;
+    }
+
+    10% {
+        opacity: 0;
+        margin-left: 0;
+    }
+
+    90% {
+        opacity: 0;
+        /* margin-left: -200%; */
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.kmc3 {
+    position: relative;
+    animation: kmc3 2.5s 0.14s ease;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+@keyframes kmc3 {
+    0% {
+        opacity: 1;
+    }
+
+    10% {
+        opacity: 0;
+        margin-left: 0;
+    }
+
+    90% {
+        opacity: 0;
+        /* margin-left: -200%; */
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.kmc4 {
+    position: relative;
+    animation: kmc4 2.5s 0.3s ease;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+@keyframes kmc4 {
+    0% {
+        opacity: 1;
+    }
+
+    10% {
+        opacity: 0;
+        margin-left: 0;
+    }
+
+    90% {
+        opacity: 0;
+        /* margin-left: -200%; */
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.kmc5 {
+    position: relative;
+    animation: kmc5 2.5s 0.4s ease;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+@keyframes kmc5 {
+    0% {
+        opacity: 1;
+    }
+
+    10% {
+        opacity: 0;
+        margin-left: 0;
+    }
+
+    90% {
+        opacity: 0;
+        /* margin-left: -200%; */
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.kmc6 {
+    position: relative;
+    animation: kmc6 2.5s 0.25s ease;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+@keyframes kmc6 {
+    0% {
+        opacity: 1;
+    }
+
+    10% {
+        opacity: 0;
+        margin-left: 0;
+    }
+
+    90% {
+        opacity: 0;
+        /* margin-left: -200%; */
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.kmc7 {
+    position: relative;
+    animation: kmc7 2.5s 0.5s ease;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+@keyframes kmc7 {
+    0% {
+        opacity: 1;
+    }
+
+    10% {
+        opacity: 0;
+        margin-left: 0;
+    }
+
+    90% {
+        opacity: 0;
+        /* margin-left: -200%; */
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.kmc8 {
+    position: relative;
+    animation: kmc8 2.5s 0.38s ease;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+@keyframes kmc8 {
+    0% {
+        opacity: 1;
+    }
+
+    10% {
+        opacity: 0;
+        margin-left: 0;
+    }
+
+    90% {
+        opacity: 0;
+        /* margin-left: -200%; */
+    }
+
+    100% {
+        opacity: 1;
+    }
+}

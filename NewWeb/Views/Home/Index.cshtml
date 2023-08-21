@@ -1,0 +1,134 @@
+﻿@{
+    Layout = null;
+}
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="~/css/style1.css">
+    <!-- <script src="script.js" defer></script> -->
+    <!-- <script src="script2.js" defer></script> -->
+</head>
+<body>
+
+    <aside class="menu">
+        <div class="demo_menu">
+            <a href="#" class="menu-item menu-item-1 tab-active tab" tab-data="1">
+                <span class="menu-item-contant front">
+                    <img src="~/images/auto-mechanic-car-mechanic-car-repair-svgrepo-com-1.svg" alt="">
+                </span>
+            </a>
+            <a href="#" class="menu-item menu-item-2">
+                <span class="menu-item-contant front">
+                    <img src="~/images/paper.svg" alt="">
+                </span>
+            </a>
+            <a href="#" class="menu-item menu-item-3 front">
+                <span class="menu-item-contant">
+                    <img src="~/images/vector.svg" alt="">
+                </span>
+
+            </a>
+            <a href="#" class="menu-item menu-item-4 front">
+                <span class="menu-item-contant">
+                </span>
+            </a>
+            <a href="#" class="menu-item menu-item-5 front">
+                <span class="menu-item-contant">
+                    <img src="~/images/wrench-1.svg" alt="">
+                </span>
+            </a>
+            <a href="#" class="menu-item menu-item-6 front">
+                <span class="menu-item-contant">
+                    <img src="~/images/computer.svg" alt="">
+                </span>
+            </a>
+            <a href="#" class="menu-item menu-item-7 tab front" tab-data="2">
+                <span class="menu-item-contant">
+                    <img src="~/images/mis.svg" alt="" style="width: 3vw;">
+                </span>
+            </a>
+            <a href="#" class="menu-item menu-item-8 tab front" tab-data="3">
+                <span>
+                    <img src="~/images/computerkmc.svg" alt="">
+                </span>
+            </a>
+        </div>
+        <div class="sec2_menu">
+            <div class="tabcont" data-tab-content="1">
+                <span>
+                    <a href="#">مدریت یکپارچه آموزش</a>
+                </span>
+                <span>
+                    <a href="#">مدریت نگهداشت پارسه</a>
+                </span>
+                <span>
+                    <a href="#">لجستیک سپهر</a>
+                </span>
+            </div>
+            <div class="tabcont" data-tab-content="2">
+                <span>
+                    <a  asp-action="LoginNew" asp-controller="Home">ورود به MIS</a>
+                </span>
+                <span>
+                    <a href="#">مدریت برونسپاری</a>
+                </span>
+                <span>
+                    <a href="#">پارکینگ</a>
+                </span>
+                <span>
+                    <a href="#">پک لیست</a>
+                </span>
+                <span>
+                    <a asp-action="AdminNew" asp-controller="Home"> ادمین وب سایت</a>
+                </span>
+                <span>
+                    <a href="#">چک لیست تحویل خودرو</a>
+                </span>
+            </div>
+            <div class="tabcont" data-tab-content="3">
+                <span>
+                    <a href="#">ارزیابی قطعات خودکفایی کرمان موتور</a>
+                </span>
+                <span>
+                    <a href="#">ارزیابی قطعات خودکفایی خودروسازان بم</a>
+                </span>
+                <span>
+                    <a href="#">ارزیابی عملکرد کارکنان کرمان موتور</a>
+                </span>
+                <span>
+                    <a href="#">کارت الکترونیک</a>
+                </span>
+            </div>
+
+        </div>
+        <script>
+            const tabs = document.querySelectorAll('.tab');
+            const contents = document.querySelectorAll('.tabcont');
+
+            tabs.forEach((tab, index)=>{
+                tab.addEventListener('click' , (e)=>{
+                    tabs.forEach(tab=>{tab.classList.remove('active')});
+                    tab.classList.add('active');
+
+                    contents.forEach(content=>{content.classList.remove('active')});
+                    contents[index].classList.add('active');
+                })
+            })
+        </script>
+    </aside>
+    <img src="~/images/J7.svg" alt="" class="J7">
+    <img src="~/images/kmc.svg" alt="" class="kmctit">
+    <section class="rightsec">
+
+        <img src="~/images/Group 13.svg" alt="" class="j7img">
+        <img src="" alt="">
+    </section>
+</body>
+</html>
