@@ -14,7 +14,7 @@ namespace NewWeb.Models
         {
         }
 
-        public PlanningDBcontax(DbContextOptions<ContaxDBlogin> options)
+        public PlanningDBcontax(DbContextOptions<PlanningDBcontax> options)
             : base(options)
         {
             //Database.SetCommandTimeout(900);

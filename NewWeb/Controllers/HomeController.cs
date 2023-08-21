@@ -15,22 +15,21 @@ namespace NewWeb.Controllers
     {
         
         private readonly ContaxDBlogin ContaxDBlogin;
-        
-        public HomeController(ContaxDBlogin ContaxDBlogin)
-        {
-            this.ContaxDBlogin = ContaxDBlogin;
-        }
-
-
-
-
-
         private readonly PlanningDBcontax PlanningDBcontax;
 
-        public HomeController(PlanningDBcontax PlanningDBcontax)
+        public HomeController(ContaxDBlogin ContaxDBlogin, PlanningDBcontax PlanningDBcontax)
         {
+            this.ContaxDBlogin = ContaxDBlogin;
             this.PlanningDBcontax = PlanningDBcontax;
         }
+
+
+
+
+
+        
+
+        
 
 
         public IActionResult Index()
@@ -109,14 +108,18 @@ namespace NewWeb.Controllers
         }
 
         public IActionResult GzrshKoli()
-        {
 
+        {
+            string vin = "NA7NFG120HA100223";
+            var vin1 = PlanningDBcontax.Tblvehicle.FirstOrDefault(u => u.vin == vin);
             string username = HttpContext.Session.GetString("Username");
             if (username != null)
             {
             string user = username.Replace(" ", string.Empty);
             string shayan = "shayan";
                 if (user == shayan) {
+                    ViewData["vin"] = vin1;
+                    ViewBag.vin = vin1.vin;
                     return View();
                 }
                 else
