@@ -8,19 +8,18 @@ using DbContext = Microsoft.EntityFrameworkCore.DbContext;
 
 namespace NewWeb.Models
 {
-    public class ContaxDBlogin : DbContext
+    public class PlanningDBcontax : DbContext
     {
-        public ContaxDBlogin()
+        public PlanningDBcontax()
         {
         }
 
-        public ContaxDBlogin(DbContextOptions<ContaxDBlogin> options)
+        public PlanningDBcontax(DbContextOptions<ContaxDBlogin> options)
             : base(options)
         {
             //Database.SetCommandTimeout(900);
             //this.Database.SetCommandTimeout(90);
         }
-        public virtual DbSet<LoginModel> tblogin { get; set; }
+        public virtual DbSet<VehicleModel> Tblvehicle { get; set; }
     }
-
 }

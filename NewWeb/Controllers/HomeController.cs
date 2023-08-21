@@ -20,7 +20,18 @@ namespace NewWeb.Controllers
         {
             this.ContaxDBlogin = ContaxDBlogin;
         }
-       
+
+
+
+
+
+        private readonly PlanningDBcontax PlanningDBcontax;
+
+        public HomeController(PlanningDBcontax PlanningDBcontax)
+        {
+            this.PlanningDBcontax = PlanningDBcontax;
+        }
+
 
         public IActionResult Index()
         {
@@ -99,12 +110,21 @@ namespace NewWeb.Controllers
 
         public IActionResult GzrshKoli()
         {
+
             string username = HttpContext.Session.GetString("Username");
+            if (username != null)
+            {
             string user = username.Replace(" ", string.Empty);
             string shayan = "shayan";
-            if (user == shayan) {
-                return View();
+                if (user == shayan) {
+                    return View();
+                }
+                else
+                {
+                    return View("LoginNew");
+                }
             }
+            
             else
             {
                 ViewData["Message"] = "کاربر احراز هویت نشده است، ریدایرکت به صفحه ورود";

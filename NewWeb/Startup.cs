@@ -38,6 +38,12 @@ namespace NewWeb
                 options.UseSqlServer(Configuration.GetConnectionString("DBConnect"));
             });
 
+
+
+            services.AddDbContext<PlanningDBcontax>(options =>
+            {
+                options.UseSqlServer(Configuration.GetConnectionString("DBConnect2"));
+            });
             services.AddSession(options =>
             {
                 options.IdleTimeout = TimeSpan.FromMinutes(30); // زمان معتبر بودن سشن
