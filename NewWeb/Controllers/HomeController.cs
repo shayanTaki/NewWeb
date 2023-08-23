@@ -107,19 +107,381 @@ namespace NewWeb.Controllers
             return RedirectToAction("LoginNew", "Home"); // ریدایرکت به صفحه ورود
         }
 
-        public IActionResult GzrshKoli()
+
+
+
+        public IActionResult vinSearch()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult vinSearch(string vin)
+        {
+            
+            var vin1 = PlanningDBcontax.Tblvehicle.FirstOrDefault(u => u.vin == vin);
+            ViewBag.vin = vin1.vin;
+            ViewBag.Type = vin1.Type;
+            ViewBag.MainLine = vin1.MainLine;
+            ViewBag.EnterBIW = vin1.EnterBIW;
+            ViewBag.BIW = vin1.BIW;
+            ViewBag.MetalFinish = vin1.MetalFinish;
+            ViewBag.EnterPaint = vin1.EnterPaint;
+            ViewBag.Primer = vin1.Primer;
+            ViewBag.TopCoat = vin1.TopCoat;
+            ViewBag.ExitPaint = vin1.ExitPaint;
+            ViewBag.EnterTrim = vin1.EnterTrim;
+            ViewBag.ExitChassis = vin1.ExitChassis;
+            ViewBag.FinalTrim = vin1.FinalTrim;
+            ViewBag.ExitTrim = vin1.ExitTrim;
+            
+            return View("vinSearch1");
+        }
+
+
+
+        //لیست دوم و الگورتیم پیاده سازی ی آن
+
+
+
+
+        
+        public IActionResult SearchKoli()
+        {
+            return View();
+        }
+
+
+        [HttpPost]
+        public IActionResult SearchKoli1(string Type, string MainLine, string EnterBIW, string BIW,
+                                    string MetalFinish, string EnterPaint, string Primer, string TopCoat, string ExitPaint,
+                                    string EnterTrim, string ExitChassis, string FinalTrim, string ExitTrim)
+        {
+            if (!string.IsNullOrEmpty(Type) && !string.IsNullOrEmpty(MainLine) && !string.IsNullOrEmpty(EnterBIW) && !string.IsNullOrEmpty(BIW)
+                && !string.IsNullOrEmpty(MetalFinish) && !string.IsNullOrEmpty(EnterPaint) && !string.IsNullOrEmpty(Primer) && !string.IsNullOrEmpty(TopCoat) && !string.IsNullOrEmpty(ExitPaint) && !string.IsNullOrEmpty(EnterTrim)
+                && !string.IsNullOrEmpty(ExitChassis) && !string.IsNullOrEmpty(FinalTrim) && !string.IsNullOrEmpty(ExitTrim))
+            {
+                // حالت هیچ ورودی پر شده
+
+                Type = Type.Replace("\t", "");
+                MainLine = MainLine.Replace("\t", "");
+                EnterBIW = EnterBIW.Replace("\t", "");
+                BIW = BIW.Replace("\t", "");
+                MetalFinish = MetalFinish.Replace("\t", "");
+                EnterPaint = EnterPaint.Replace("\t", "");
+                Primer = Primer.Replace("\t", "");
+                TopCoat = TopCoat.Replace("\t", "");
+                ExitPaint = ExitPaint.Replace("\t", "");
+                EnterTrim = EnterTrim.Replace("\t", "");
+                ExitChassis = ExitChassis.Replace("\t", "");
+                FinalTrim = FinalTrim.Replace("\t", "");
+                ExitTrim = ExitTrim.Replace("\t", "");
+
+                var vehicleList = PlanningDBcontax.Tblvehicle.Where(u =>
+             u.Type == Type &&
+             u.MainLine == MainLine &&
+             u.EnterBIW == EnterBIW &&
+             u.BIW == BIW &&
+             u.MetalFinish == MetalFinish &&
+             u.EnterPaint == EnterPaint &&
+             u.Primer == Primer &&
+             u.TopCoat == TopCoat &&
+             u.ExitPaint == ExitPaint &&
+             u.EnterTrim == EnterTrim &&
+             u.ExitChassis == ExitChassis &&
+            u.FinalTrim == FinalTrim &&
+             u.ExitTrim == ExitTrim)
+            .ToList();
+                //foreach (var vin1 in vehicleList)
+                //{
+                //    ViewBag.vin = vin1.vin;
+                //    ViewBag.Type = vin1.Type;
+                //    ViewBag.MainLine = vin1.MainLine;
+                //    ViewBag.EnterBIW = vin1.EnterBIW;
+                //    ViewBag.BIW = vin1.BIW;
+                //    ViewBag.MetalFinish = vin1.MetalFinish;
+                //    ViewBag.EnterPaint = vin1.EnterPaint;
+                //    ViewBag.Primer = vin1.Primer;
+                //    ViewBag.TopCoat = vin1.TopCoat;
+                //    ViewBag.ExitPaint = vin1.ExitPaint;
+                //    ViewBag.EnterTrim = vin1.EnterTrim;
+                //    ViewBag.ExitChassis = vin1.ExitChassis;
+                //    ViewBag.FinalTrim = vin1.FinalTrim;
+                //    ViewBag.ExitTrim = vin1.ExitTrim;
+
+
+                //}
+                ViewBag.vehicleList = vehicleList;
+                return View("SearchKoliPost");
+            }
+
+
+            //###############################################################################################################
+
+            else if (!string.IsNullOrEmpty(Type) && string.IsNullOrEmpty(MainLine) && string.IsNullOrEmpty(EnterBIW) && string.IsNullOrEmpty(BIW)
+                && string.IsNullOrEmpty(MetalFinish) && string.IsNullOrEmpty(EnterPaint) && string.IsNullOrEmpty(Primer) && string.IsNullOrEmpty(TopCoat) && string.IsNullOrEmpty(ExitPaint) && string.IsNullOrEmpty(EnterTrim)
+                && string.IsNullOrEmpty(ExitChassis) && string.IsNullOrEmpty(FinalTrim) && string.IsNullOrEmpty(ExitTrim))
+            {
+
+                Type = Type.Replace("\t", "");
+                var vehicleList = PlanningDBcontax.Tblvehicle.Where(u =>
+                u.Type == Type).ToList();
+                ViewBag.vehicleList = vehicleList;
+
+                return View("SearchKoliPost1");
+            }
+
+
+            //###############################################################################################################
+
+            else if (!string.IsNullOrEmpty(Type) && !string.IsNullOrEmpty(MainLine) && string.IsNullOrEmpty(EnterBIW) && string.IsNullOrEmpty(BIW)
+               && string.IsNullOrEmpty(MetalFinish) && string.IsNullOrEmpty(EnterPaint) && string.IsNullOrEmpty(Primer) && string.IsNullOrEmpty(TopCoat) && string.IsNullOrEmpty(ExitPaint) && string.IsNullOrEmpty(EnterTrim)
+               && string.IsNullOrEmpty(ExitChassis) && string.IsNullOrEmpty(FinalTrim) && string.IsNullOrEmpty(ExitTrim))
+            {
+
+                Type = Type.Replace("\t", "");
+                MainLine = MainLine.Replace("\t", "");
+                var vehicleList = PlanningDBcontax.Tblvehicle.Where(u =>
+                u.Type == Type &&
+                u.MainLine == MainLine).ToList();
+                ViewBag.vehicleList = vehicleList;
+
+                return View("SearchKoliPost2");
+            }
+
+            //###############################################################################################################
+            else if (!string.IsNullOrEmpty(Type) && !string.IsNullOrEmpty(MainLine) && !string.IsNullOrEmpty(EnterBIW) && string.IsNullOrEmpty(BIW)
+               && string.IsNullOrEmpty(MetalFinish) && string.IsNullOrEmpty(EnterPaint) && string.IsNullOrEmpty(Primer) && string.IsNullOrEmpty(TopCoat) && string.IsNullOrEmpty(ExitPaint) && string.IsNullOrEmpty(EnterTrim)
+               && string.IsNullOrEmpty(ExitChassis) && string.IsNullOrEmpty(FinalTrim) && string.IsNullOrEmpty(ExitTrim))
+            {
+
+                Type = Type.Replace("\t", "");
+                MainLine = MainLine.Replace("\t", "");
+                EnterBIW = EnterBIW.Replace("\t", "");
+                var vehicleList = PlanningDBcontax.Tblvehicle.Where(u =>
+                u.Type == Type &&
+                u.MainLine == MainLine &&
+                u.EnterBIW == EnterBIW).ToList();
+                ViewBag.vehicleList = vehicleList;
+
+                return View("SearchKoliPost3");
+            }
+            //###############################################################################################################
+            else if (!string.IsNullOrEmpty(Type) && !string.IsNullOrEmpty(MainLine) && !string.IsNullOrEmpty(EnterBIW) && !string.IsNullOrEmpty(BIW)
+              && string.IsNullOrEmpty(MetalFinish) && string.IsNullOrEmpty(EnterPaint) && string.IsNullOrEmpty(Primer) && string.IsNullOrEmpty(TopCoat) && string.IsNullOrEmpty(ExitPaint) && string.IsNullOrEmpty(EnterTrim)
+              && string.IsNullOrEmpty(ExitChassis) && string.IsNullOrEmpty(FinalTrim) && string.IsNullOrEmpty(ExitTrim))
+            {
+
+                Type = Type.Replace("\t", "");
+                MainLine = MainLine.Replace("\t", "");
+                EnterBIW = EnterBIW.Replace("\t", "");
+                BIW = BIW.Replace("\t", "");
+                var vehicleList = PlanningDBcontax.Tblvehicle.Where(u =>
+                u.Type == Type &&
+                u.MainLine == MainLine &&
+                u.EnterBIW == EnterBIW &&
+                u.BIW == BIW).ToList();
+                ViewBag.vehicleList = vehicleList;
+
+                return View("SearchKoliPost4");
+            }
+
+            //###############################################################################################################
+            else if (!string.IsNullOrEmpty(Type) && !string.IsNullOrEmpty(MainLine) && !string.IsNullOrEmpty(EnterBIW) && !string.IsNullOrEmpty(BIW)
+              && !string.IsNullOrEmpty(MetalFinish) && string.IsNullOrEmpty(EnterPaint) && string.IsNullOrEmpty(Primer) && string.IsNullOrEmpty(TopCoat) && string.IsNullOrEmpty(ExitPaint) && string.IsNullOrEmpty(EnterTrim)
+              && string.IsNullOrEmpty(ExitChassis) && string.IsNullOrEmpty(FinalTrim) && string.IsNullOrEmpty(ExitTrim))
+            {
+
+                Type = Type.Replace("\t", "");
+                MainLine = MainLine.Replace("\t", "");
+                EnterBIW = EnterBIW.Replace("\t", "");
+                BIW = BIW.Replace("\t", "");
+                MetalFinish = MetalFinish.Replace("\t", "");
+                var vehicleList = PlanningDBcontax.Tblvehicle.Where(u =>
+                u.Type == Type &&
+                u.MainLine == MainLine &&
+                u.EnterBIW == EnterBIW &&
+                u.BIW == BIW &&
+                u.MetalFinish == MetalFinish).ToList();
+                ViewBag.vehicleList = vehicleList;
+
+                return View("SearchKoliPost5");
+            }
+
+            //###############################################################################################################
+            else if (!string.IsNullOrEmpty(Type) && !string.IsNullOrEmpty(MainLine) && !string.IsNullOrEmpty(EnterBIW) && !string.IsNullOrEmpty(BIW)
+              && !string.IsNullOrEmpty(MetalFinish) && !string.IsNullOrEmpty(EnterPaint) && string.IsNullOrEmpty(Primer) && string.IsNullOrEmpty(TopCoat) && string.IsNullOrEmpty(ExitPaint) && string.IsNullOrEmpty(EnterTrim)
+              && string.IsNullOrEmpty(ExitChassis) && string.IsNullOrEmpty(FinalTrim) && string.IsNullOrEmpty(ExitTrim))
+            {
+
+                Type = Type.Replace("\t", "");
+                MainLine = MainLine.Replace("\t", "");
+                EnterBIW = EnterBIW.Replace("\t", "");
+                BIW = BIW.Replace("\t", "");
+                MetalFinish = MetalFinish.Replace("\t", "");
+                EnterPaint = EnterPaint.Replace("\t", "");
+                var vehicleList = PlanningDBcontax.Tblvehicle.Where(u =>
+                u.Type == Type &&
+                u.MainLine == MainLine &&
+                u.EnterBIW == EnterBIW &&
+                u.BIW == BIW &&
+                u.MetalFinish == MetalFinish &&
+                u.EnterPaint == EnterPaint).ToList();
+                ViewBag.vehicleList = vehicleList;
+
+                return View("SearchKoliPost6");
+            }
+            //###############################################################################################################
+            else if (!string.IsNullOrEmpty(Type) && !string.IsNullOrEmpty(MainLine) && !string.IsNullOrEmpty(EnterBIW) && !string.IsNullOrEmpty(BIW)
+              && !string.IsNullOrEmpty(MetalFinish) && !string.IsNullOrEmpty(EnterPaint) && !string.IsNullOrEmpty(Primer) && string.IsNullOrEmpty(TopCoat) && string.IsNullOrEmpty(ExitPaint) && string.IsNullOrEmpty(EnterTrim)
+              && string.IsNullOrEmpty(ExitChassis) && string.IsNullOrEmpty(FinalTrim) && string.IsNullOrEmpty(ExitTrim))
+            {
+
+                Type = Type.Replace("\t", "");
+                MainLine = MainLine.Replace("\t", "");
+                EnterBIW = EnterBIW.Replace("\t", "");
+                BIW = BIW.Replace("\t", "");
+                MetalFinish = MetalFinish.Replace("\t", "");
+                EnterPaint = EnterPaint.Replace("\t", "");
+                Primer = Primer.Replace("\t", "");
+                var vehicleList = PlanningDBcontax.Tblvehicle.Where(u =>
+                u.Type == Type &&
+                u.MainLine == MainLine &&
+                u.EnterBIW == EnterBIW &&
+                u.BIW == BIW &&
+                u.MetalFinish == MetalFinish &&
+                u.EnterPaint == EnterPaint &&
+                u.Primer == Primer).ToList();
+                ViewBag.vehicleList = vehicleList;
+
+                return View("SearchKoliPost7");
+            }
+
+            //###############################################################################################################
+            else if (!string.IsNullOrEmpty(Type) && !string.IsNullOrEmpty(MainLine) && !string.IsNullOrEmpty(EnterBIW) && !string.IsNullOrEmpty(BIW)
+              && !string.IsNullOrEmpty(MetalFinish) && !string.IsNullOrEmpty(EnterPaint) && !string.IsNullOrEmpty(Primer) && !string.IsNullOrEmpty(TopCoat) && string.IsNullOrEmpty(ExitPaint) && string.IsNullOrEmpty(EnterTrim)
+              && string.IsNullOrEmpty(ExitChassis) && string.IsNullOrEmpty(FinalTrim) && string.IsNullOrEmpty(ExitTrim))
+            {
+
+                Type = Type.Replace("\t", "");
+                MainLine = MainLine.Replace("\t", "");
+                EnterBIW = EnterBIW.Replace("\t", "");
+                BIW = BIW.Replace("\t", "");
+                MetalFinish = MetalFinish.Replace("\t", "");
+                EnterPaint = EnterPaint.Replace("\t", "");
+                Primer = Primer.Replace("\t", "");
+                TopCoat = TopCoat.Replace("\t", "");
+                var vehicleList = PlanningDBcontax.Tblvehicle.Where(u =>
+                u.Type == Type &&
+                u.MainLine == MainLine &&
+                u.EnterBIW == EnterBIW &&
+                u.BIW == BIW &&
+                u.MetalFinish == MetalFinish &&
+                u.EnterPaint == EnterPaint &&
+                u.Primer == Primer &&
+                u.TopCoat == TopCoat).ToList();
+                ViewBag.vehicleList = vehicleList;
+
+                return View("SearchKoliPost7");
+            }
+
+
+
+            //###############################################################################################################
+            else if (!string.IsNullOrEmpty(Type) && !string.IsNullOrEmpty(MainLine) && !string.IsNullOrEmpty(EnterBIW) && !string.IsNullOrEmpty(BIW)
+              && !string.IsNullOrEmpty(MetalFinish) && !string.IsNullOrEmpty(EnterPaint) && !string.IsNullOrEmpty(Primer) && !string.IsNullOrEmpty(TopCoat) && !string.IsNullOrEmpty(ExitPaint) && string.IsNullOrEmpty(EnterTrim)
+              && string.IsNullOrEmpty(ExitChassis) && string.IsNullOrEmpty(FinalTrim) && string.IsNullOrEmpty(ExitTrim))
+            {
+
+                Type = Type.Replace("\t", "");
+                MainLine = MainLine.Replace("\t", "");
+                EnterBIW = EnterBIW.Replace("\t", "");
+                BIW = BIW.Replace("\t", "");
+                MetalFinish = MetalFinish.Replace("\t", "");
+                EnterPaint = EnterPaint.Replace("\t", "");
+                Primer = Primer.Replace("\t", "");
+                TopCoat = TopCoat.Replace("\t", "");
+                ExitPaint = ExitPaint.Replace("\t", "");
+                var vehicleList = PlanningDBcontax.Tblvehicle.Where(u =>
+                u.Type == Type &&
+                u.MainLine == MainLine &&
+                u.EnterBIW == EnterBIW &&
+                u.BIW == BIW &&
+                u.MetalFinish == MetalFinish &&
+                u.EnterPaint == EnterPaint &&
+                u.Primer == Primer &&
+                u.TopCoat == TopCoat &&
+                u.ExitPaint == ExitPaint).ToList();
+                ViewBag.vehicleList = vehicleList;
+
+                return View("SearchKoliPost8");
+            }
+            //###############################################################################################################
+            else if (!string.IsNullOrEmpty(Type) && !string.IsNullOrEmpty(MainLine) && !string.IsNullOrEmpty(EnterBIW) && !string.IsNullOrEmpty(BIW)
+              && !string.IsNullOrEmpty(MetalFinish) && !string.IsNullOrEmpty(EnterPaint) && !string.IsNullOrEmpty(Primer) && !string.IsNullOrEmpty(TopCoat) && !string.IsNullOrEmpty(ExitPaint) && !string.IsNullOrEmpty(EnterTrim)
+              && string.IsNullOrEmpty(ExitChassis) && string.IsNullOrEmpty(FinalTrim) && string.IsNullOrEmpty(ExitTrim))
+            {
+
+                Type = Type.Replace("\t", "");
+                MainLine = MainLine.Replace("\t", "");
+                EnterBIW = EnterBIW.Replace("\t", "");
+                BIW = BIW.Replace("\t", "");
+                MetalFinish = MetalFinish.Replace("\t", "");
+                EnterPaint = EnterPaint.Replace("\t", "");
+                Primer = Primer.Replace("\t", "");
+                TopCoat = TopCoat.Replace("\t", "");
+                ExitPaint = ExitPaint.Replace("\t", "");
+                EnterTrim = EnterTrim.Replace("\t", "");
+                var vehicleList = PlanningDBcontax.Tblvehicle.Where(u =>
+                u.Type == Type &&
+                u.MainLine == MainLine &&
+                u.EnterBIW == EnterBIW &&
+                u.BIW == BIW &&
+                u.MetalFinish == MetalFinish &&
+                u.EnterPaint == EnterPaint &&
+                u.Primer == Primer &&
+                u.TopCoat == TopCoat &&
+                u.ExitPaint == ExitPaint &&
+                u.EnterTrim == EnterTrim).ToList();
+                ViewBag.vehicleList = vehicleList;
+
+                return View("SearchKoliPost9");
+            }
+            else
+            {
+                return View();
+            }
+
+        }
+
+
+
+            //###############################################################################################################
+
+
+
+
+
+
+
+
+
+
+
+            public IActionResult GzrshKoli()
 
         {
-            string vin = "NA7NFG120HA100223";
-            var vin1 = PlanningDBcontax.Tblvehicle.FirstOrDefault(u => u.vin == vin);
+            
             string username = HttpContext.Session.GetString("Username");
             if (username != null)
             {
             string user = username.Replace(" ", string.Empty);
             string shayan = "shayan";
                 if (user == shayan) {
+                    string vin = "NA7NFG120HA100237";
+                    var vin1 = PlanningDBcontax.Tblvehicle.FirstOrDefault(u => u.vin == vin);
                     ViewData["vin"] = vin1;
                     ViewBag.vin = vin1.vin;
+                    ViewBag.ExtPDI = vin1.ExtPDI;
                     return View();
                 }
                 else
