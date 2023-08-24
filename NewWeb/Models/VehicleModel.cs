@@ -13,14 +13,7 @@ namespace NewWeb.Models
         public string vin { get; set; }
 
         public string DateVin { get; set; }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 
->>>>>>> febc784058c41ff04cc6bf0ba1b3b56577a0f7f9
-=======
-
->>>>>>> origin/master
         public string Type { get; set; }
         public string VirtualType { get; set; }
         public string Pack { get; set; }
@@ -73,17 +66,6 @@ namespace NewWeb.Models
         public string Kilometer { get; set; }
 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 
-
-
->>>>>>> febc784058c41ff04cc6bf0ba1b3b56577a0f7f9
-=======
-
-
-
->>>>>>> origin/master
     }
 }

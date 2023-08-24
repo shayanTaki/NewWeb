@@ -446,6 +446,76 @@ namespace NewWeb.Controllers
 
                 return View("SearchKoliPost9");
             }
+
+            //###############################################################################################################
+            else if (!string.IsNullOrEmpty(Type) && !string.IsNullOrEmpty(MainLine) && !string.IsNullOrEmpty(EnterBIW) && !string.IsNullOrEmpty(BIW)
+              && !string.IsNullOrEmpty(MetalFinish) && !string.IsNullOrEmpty(EnterPaint) && !string.IsNullOrEmpty(Primer) && !string.IsNullOrEmpty(TopCoat) && !string.IsNullOrEmpty(ExitPaint) && !string.IsNullOrEmpty(EnterTrim)
+              && !string.IsNullOrEmpty(ExitChassis) && string.IsNullOrEmpty(FinalTrim) && string.IsNullOrEmpty(ExitTrim))
+            {
+
+                Type = Type.Replace("\t", "");
+                MainLine = MainLine.Replace("\t", "");
+                EnterBIW = EnterBIW.Replace("\t", "");
+                BIW = BIW.Replace("\t", "");
+                MetalFinish = MetalFinish.Replace("\t", "");
+                EnterPaint = EnterPaint.Replace("\t", "");
+                Primer = Primer.Replace("\t", "");
+                TopCoat = TopCoat.Replace("\t", "");
+                ExitPaint = ExitPaint.Replace("\t", "");
+                EnterTrim = EnterTrim.Replace("\t", "");
+                ExitChassis = ExitChassis.Replace("\t", "");
+                var vehicleList = PlanningDBcontax.Tblvehicle.Where(u =>
+                u.Type == Type &&
+                u.MainLine == MainLine &&
+                u.EnterBIW == EnterBIW &&
+                u.BIW == BIW &&
+                u.MetalFinish == MetalFinish &&
+                u.EnterPaint == EnterPaint &&
+                u.Primer == Primer &&
+                u.TopCoat == TopCoat &&
+                u.ExitPaint == ExitPaint &&
+                u.EnterTrim == EnterTrim &&
+                u.ExitChassis == ExitChassis).ToList();
+                ViewBag.vehicleList = vehicleList;
+
+                return View("SearchKoliPost10");
+            }
+
+            //###############################################################################################################
+            else if (!string.IsNullOrEmpty(Type) && !string.IsNullOrEmpty(MainLine) && !string.IsNullOrEmpty(EnterBIW) && !string.IsNullOrEmpty(BIW)
+              && !string.IsNullOrEmpty(MetalFinish) && !string.IsNullOrEmpty(EnterPaint) && !string.IsNullOrEmpty(Primer) && !string.IsNullOrEmpty(TopCoat) && !string.IsNullOrEmpty(ExitPaint) && !string.IsNullOrEmpty(EnterTrim)
+              && !string.IsNullOrEmpty(ExitChassis) && !string.IsNullOrEmpty(FinalTrim) && string.IsNullOrEmpty(ExitTrim))
+            {
+
+                Type = Type.Replace("\t", "");
+                MainLine = MainLine.Replace("\t", "");
+                EnterBIW = EnterBIW.Replace("\t", "");
+                BIW = BIW.Replace("\t", "");
+                MetalFinish = MetalFinish.Replace("\t", "");
+                EnterPaint = EnterPaint.Replace("\t", "");
+                Primer = Primer.Replace("\t", "");
+                TopCoat = TopCoat.Replace("\t", "");
+                ExitPaint = ExitPaint.Replace("\t", "");
+                EnterTrim = EnterTrim.Replace("\t", "");
+                ExitChassis = ExitChassis.Replace("\t", "");
+                FinalTrim = FinalTrim.Replace("\t", "");
+                var vehicleList = PlanningDBcontax.Tblvehicle.Where(u =>
+                u.Type == Type &&
+                u.MainLine == MainLine &&
+                u.EnterBIW == EnterBIW &&
+                u.BIW == BIW &&
+                u.MetalFinish == MetalFinish &&
+                u.EnterPaint == EnterPaint &&
+                u.Primer == Primer &&
+                u.TopCoat == TopCoat &&
+                u.ExitPaint == ExitPaint &&
+                u.EnterTrim == EnterTrim &&
+                u.ExitChassis == ExitChassis &&
+                u.FinalTrim == FinalTrim).ToList();
+                ViewBag.vehicleList = vehicleList;
+
+                return View("SearchKoliPost11");
+            }
             else
             {
                 return View();

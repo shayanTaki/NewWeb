@@ -1,0 +1,48 @@
+﻿
+@{
+    Layout = "_Layout";
+}
+
+
+
+<tr>
+    <td class="table-headers">1         </td>
+    <td class="table-headers">NKA_D889270GJBID038</td>
+    <td class="table-headers">784           </td>
+    <td class="table-headers">1402/02/07    </td>
+    <td class="table-headers">1402/02/07    </td>
+    <td class="table-headers">1402/02/07    </td>
+    <td class="table-headers">1402/02/07  </td>
+    <td class="table-headers">1402/02/07  </td>
+    <td class="table-headers">-       </td>
+    <td class="table-headers">-    </td>
+    <td class="table-headers">-   </td>
+    <td class="table-headers">-  </td>
+    <td class="table-headers">- </td>
+    <td class="table-headers">-   </td>
+    <td class="table-headers">-    </td>
+</tr>
+
+@section Jadval2 {
+    @foreach (var item in ViewBag.vehicleList)
+    {
+        <tr>
+            <td class="table-headers">1</td>
+            <td class="table-headers">@item.vin</td>
+            <td class="table-headers">@item.Type</td>
+            <td class="table-headers">@item.MainLine</td>
+            <td class="table-headers">@item.EnterBIW</td>
+            <td class="table-headers">@item.BIW</td>
+            <td class="table-headers">@item.MetalFinish</td>
+            <td class="table-headers">@item.EnterPaint</td>
+            <td class="table-headers">@item.Primer</td>
+            <td class="table-headers">@item.TopCoat</td>
+            <td class="table-headers">@item.ExitPaint</td>
+            <td class="table-headers">@item.EnterTrim</td>
+            <td class="table-headers">@item.ExitChassis</td>
+            <td class="table-headers">@item.FinalTrim</td>
+            <td class="table-headers">@item.ExitTrim</td>
+        </tr>
+    }
+}
+
