@@ -671,6 +671,20 @@ namespace NewWeb.Controllers
 
                 return View("SearchKoliPost22");
             }
+            //###############################################################################################################
+
+            else if (string.IsNullOrEmpty(Type) && string.IsNullOrEmpty(MainLine) && string.IsNullOrEmpty(EnterBIW) && string.IsNullOrEmpty(BIW)
+                && string.IsNullOrEmpty(MetalFinish) && string.IsNullOrEmpty(EnterPaint) && string.IsNullOrEmpty(Primer) && string.IsNullOrEmpty(TopCoat) && string.IsNullOrEmpty(ExitPaint) && string.IsNullOrEmpty(EnterTrim)
+                && string.IsNullOrEmpty(ExitChassis) && string.IsNullOrEmpty(FinalTrim) && !string.IsNullOrEmpty(ExitTrim))
+            {
+
+                ExitTrim = ExitTrim.Replace("\t", "");
+                var vehicleList = PlanningDBcontax.Tblvehicle.Where(u =>
+                u.ExitTrim == ExitTrim).ToList();
+                ViewBag.vehicleList = vehicleList;
+
+                return View("SearchKoliPost23");
+            }
             else
             {
                 return View();
