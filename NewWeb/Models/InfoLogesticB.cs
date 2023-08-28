@@ -11,5 +11,6 @@ namespace NewWeb.Models
 #nullable enable
         public int? ID { get; set; }
         public string? TransCode { get; set; }
+        public string? TransTo { get; set; }
     }
 }
