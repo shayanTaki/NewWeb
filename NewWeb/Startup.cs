@@ -45,6 +45,11 @@ namespace NewWeb
                 options.UseSqlServer(Configuration.GetConnectionString("DBConnect2"));
             });
 
+            services.AddDbContext<CountaxInfoLogesticB>(options =>
+            {
+                options.UseSqlServer(Configuration.GetConnectionString("DBConnect2"));
+            });
+
 
 
             services.AddSession(options =>
