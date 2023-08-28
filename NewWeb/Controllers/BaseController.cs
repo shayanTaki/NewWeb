@@ -34,8 +34,10 @@ namespace NewWeb.Controllers
 
 
 
-            var Trans = CountaxInfoLogesticB.tbliOLogisticInfoB.FirstOrDefault(x => x.ID == 322);
-            ViewBag.Trans = Trans;
+            var TransSaipa = CountaxInfoLogesticB.tbliOLogisticInfoB.Where(x => x.TransTo == "SAIPA").ToList();
+            var TransModiran = CountaxInfoLogesticB.tbliOLogisticInfoB.Where(x => x.TransTo == "MVM").ToList();
+            ViewBag.TransSaipa = TransSaipa.Count;
+            ViewBag.TransModiran = TransModiran.Count;
 
             //ViewBag.CountKMCbody = CountKMCbody;
             //ViewBag.CountARMbody = CountARMbody;
