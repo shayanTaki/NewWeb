@@ -5,13 +5,10 @@ using System.Threading.Tasks;
 
 namespace NewWeb.Models
 {
-    public class InfoLogesticB
+    public class TopCoatModel
     {
-
 #nullable enable
         public int? ID { get; set; }
-        public string? TransCode { get; set; }
-        public string? TransTo { get; set; }
-        public string? ExitDate { get; set; }
+        public string? DateTopCoat { get; set; }
     }
 }

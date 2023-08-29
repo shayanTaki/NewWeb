@@ -50,6 +50,10 @@ namespace NewWeb
                 options.UseSqlServer(Configuration.GetConnectionString("DBConnect2"));
             });
 
+            services.AddDbContext<ContaxTopCoat>(options =>
+            {
+                options.UseSqlServer(Configuration.GetConnectionString("DBConnect2"));
+            });
 
 
             services.AddSession(options =>
