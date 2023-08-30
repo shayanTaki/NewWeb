@@ -56,6 +56,11 @@ namespace NewWeb
             });
 
 
+            services.AddDbContext<CountaxStatusCar>(options =>
+            {
+                options.UseSqlServer(Configuration.GetConnectionString("DBConnect3"));
+            });
+
             services.AddSession(options =>
             {
                 options.IdleTimeout = TimeSpan.FromMinutes(30); // زمان معتبر بودن سشن

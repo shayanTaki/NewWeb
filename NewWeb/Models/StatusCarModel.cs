@@ -6,11 +6,13 @@ using System.Threading.Tasks;
 
 namespace NewWeb.Models
 {
-    public class TopCoatModel
+    public class StatusCarModel
     {
 #nullable enable
         [Key]
-        public int? ID { get; set; }
-        public string? DateTopCoat { get; set; }
+        public int? StatusCarID { get; set; }
+        public string? VIN { get; set; }
+        public DateTime? CarINDate { get; set; }
+        public bool CarInParking { get; set; }
     }
 }

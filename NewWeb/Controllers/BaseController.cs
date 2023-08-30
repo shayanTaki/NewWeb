@@ -14,14 +14,16 @@ namespace NewWeb.Controllers
         private readonly PlanningDBcontax PlanningDBcontax;
         private readonly CountaxInfoLogesticB CountaxInfoLogesticB;
         private readonly ContaxTopCoat ContaxTopCoat;
+        private readonly CountaxStatusCar CountaxStatusCar;
 
-        public BaseController(ContaxDBlogin ContaxDBlogin, PlanningDBcontax PlanningDBcontax,CountaxInfoLogesticB CountaxInfoLogesticB, ContaxTopCoat ContaxTopCoat)
+        public BaseController(ContaxDBlogin ContaxDBlogin, PlanningDBcontax PlanningDBcontax,CountaxInfoLogesticB CountaxInfoLogesticB, ContaxTopCoat ContaxTopCoat, CountaxStatusCar CountaxStatusCar)
         {
             this.ContaxDBlogin = ContaxDBlogin;
             this.PlanningDBcontax = PlanningDBcontax;
             this.ContaxTopCoat = ContaxTopCoat;
             this.CountaxInfoLogesticB = CountaxInfoLogesticB;
-            
+            this.CountaxStatusCar = CountaxStatusCar;
+
         }
         public IActionResult Index()
         {
@@ -78,6 +80,14 @@ namespace NewWeb.Controllers
 
 
 
+            //parking 
+
+            string formattedDate = today.ToString("d/MM/yyyy");
+
+
+          
+
+            var savedDates = CountaxStatusCar.StatusCar.Where(d => d.CarINDate.ToString().Substring(0, 10) == formattedDate && d.CarInParking == true).ToList();
 
             ViewBag.PersianYear = year.ToString();
             ViewBag.PersianMonth = month.ToString("D2"); // به فرمت دو رقمی
