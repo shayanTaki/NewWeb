@@ -177,7 +177,7 @@ namespace NewWeb.Controllers
                 ExitTrim = ExitTrim.Replace("\t", "");
 
                 var vehicleList = PlanningDBcontax.Tblvehicle.Where(u =>
-             u.Type == Type &&
+             u.VirtualType == Type &&
              u.MainLine == MainLine &&
              u.EnterBIW == EnterBIW &&
              u.BIW == BIW &&
@@ -241,7 +241,7 @@ namespace NewWeb.Controllers
                 Type = Type.Replace("\t", "");
                 MainLine = MainLine.Replace("\t", "");
                 var vehicleList = PlanningDBcontax.Tblvehicle.Where(u =>
-                u.Type == Type &&
+                u.VirtualType == Type &&
                 u.MainLine == MainLine).ToList();
                 ViewBag.vehicleList = vehicleList;
 
@@ -258,7 +258,7 @@ namespace NewWeb.Controllers
                 MainLine = MainLine.Replace("\t", "");
                 EnterBIW = EnterBIW.Replace("\t", "");
                 var vehicleList = PlanningDBcontax.Tblvehicle.Where(u =>
-                u.Type == Type &&
+                u.VirtualType == Type &&
                 u.MainLine == MainLine &&
                 u.EnterBIW == EnterBIW).ToList();
                 ViewBag.vehicleList = vehicleList;
@@ -276,7 +276,7 @@ namespace NewWeb.Controllers
                 EnterBIW = EnterBIW.Replace("\t", "");
                 BIW = BIW.Replace("\t", "");
                 var vehicleList = PlanningDBcontax.Tblvehicle.Where(u =>
-                u.Type == Type &&
+                u.VirtualType == Type &&
                 u.MainLine == MainLine &&
                 u.EnterBIW == EnterBIW &&
                 u.BIW == BIW).ToList();
@@ -297,7 +297,7 @@ namespace NewWeb.Controllers
                 BIW = BIW.Replace("\t", "");
                 MetalFinish = MetalFinish.Replace("\t", "");
                 var vehicleList = PlanningDBcontax.Tblvehicle.Where(u =>
-                u.Type == Type &&
+                u.VirtualType == Type &&
                 u.MainLine == MainLine &&
                 u.EnterBIW == EnterBIW &&
                 u.BIW == BIW &&
@@ -320,7 +320,7 @@ namespace NewWeb.Controllers
                 MetalFinish = MetalFinish.Replace("\t", "");
                 EnterPaint = EnterPaint.Replace("\t", "");
                 var vehicleList = PlanningDBcontax.Tblvehicle.Where(u =>
-                u.Type == Type &&
+                u.VirtualType == Type &&
                 u.MainLine == MainLine &&
                 u.EnterBIW == EnterBIW &&
                 u.BIW == BIW &&
@@ -344,7 +344,7 @@ namespace NewWeb.Controllers
                 EnterPaint = EnterPaint.Replace("\t", "");
                 Primer = Primer.Replace("\t", "");
                 var vehicleList = PlanningDBcontax.Tblvehicle.Where(u =>
-                u.Type == Type &&
+                u.VirtualType == Type &&
                 u.MainLine == MainLine &&
                 u.EnterBIW == EnterBIW &&
                 u.BIW == BIW &&
@@ -371,7 +371,7 @@ namespace NewWeb.Controllers
                 Primer = Primer.Replace("\t", "");
                 TopCoat = TopCoat.Replace("\t", "");
                 var vehicleList = PlanningDBcontax.Tblvehicle.Where(u =>
-                u.Type == Type &&
+                u.VirtualType == Type &&
                 u.MainLine == MainLine &&
                 u.EnterBIW == EnterBIW &&
                 u.BIW == BIW &&
@@ -402,7 +402,7 @@ namespace NewWeb.Controllers
                 TopCoat = TopCoat.Replace("\t", "");
                 ExitPaint = ExitPaint.Replace("\t", "");
                 var vehicleList = PlanningDBcontax.Tblvehicle.Where(u =>
-                u.Type == Type &&
+                u.VirtualType == Type &&
                 u.MainLine == MainLine &&
                 u.EnterBIW == EnterBIW &&
                 u.BIW == BIW &&
@@ -432,7 +432,7 @@ namespace NewWeb.Controllers
                 ExitPaint = ExitPaint.Replace("\t", "");
                 EnterTrim = EnterTrim.Replace("\t", "");
                 var vehicleList = PlanningDBcontax.Tblvehicle.Where(u =>
-                u.Type == Type &&
+                u.VirtualType == Type &&
                 u.MainLine == MainLine &&
                 u.EnterBIW == EnterBIW &&
                 u.BIW == BIW &&
@@ -465,7 +465,7 @@ namespace NewWeb.Controllers
                 EnterTrim = EnterTrim.Replace("\t", "");
                 ExitChassis = ExitChassis.Replace("\t", "");
                 var vehicleList = PlanningDBcontax.Tblvehicle.Where(u =>
-                u.Type == Type &&
+                u.VirtualType == Type &&
                 u.MainLine == MainLine &&
                 u.EnterBIW == EnterBIW &&
                 u.BIW == BIW &&
@@ -500,7 +500,7 @@ namespace NewWeb.Controllers
                 ExitChassis = ExitChassis.Replace("\t", "");
                 FinalTrim = FinalTrim.Replace("\t", "");
                 var vehicleList = PlanningDBcontax.Tblvehicle.Where(u =>
-                u.Type == Type &&
+                u.VirtualType == Type &&
                 u.MainLine == MainLine &&
                 u.EnterBIW == EnterBIW &&
                 u.BIW == BIW &&

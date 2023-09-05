@@ -1,0 +1,110 @@
+﻿@{
+    Layout = null;
+}
+<form id="myForm">
+    <!-- چک باکس 1 -->
+    <input type="checkbox" id="checkbox1" name="checkbox1" onchange="toggleDateInput('checkbox1', 'dateInput1')"> آیتم 1<br>
+    <div id="dateInput1" style="display:none;">
+        تاریخ: <input type="text" name="date1"><br>
+    </div>
+
+    <!-- چک باکس 2 -->
+    <input type="checkbox" id="checkbox2" name="checkbox2" onchange="toggleDateInput('checkbox2', 'dateInput2')"> آیتم 2<br>
+    <div id="dateInput2" style="display:none;">
+        تاریخ: <input type="text" name="date2"><br>
+    </div>
+
+    <!-- چک باکس 3 -->
+    <input type="checkbox" id="checkbox3" name="checkbox3" onchange="toggleDateInput('checkbox3', 'dateInput3')"> آیتم 3<br>
+    <div id="dateInput3" style="display:none;">
+        تاریخ: <input type="text" name="date3"><br>
+    </div>
+
+    <input type="checkbox" id="checkbox3" name="checkbox3" onchange="toggleDateInput('checkbox3', 'dateInput3')"> آیتم 3<br>
+    <div id="dateInput3" style="display:none;">
+        تاریخ: <input type="text" name="date3"><br>
+    </div>
+
+    <input type="checkbox" id="checkbox3" name="checkbox3" onchange="toggleDateInput('checkbox3', 'dateInput3')"> آیتم 3<br>
+    <div id="dateInput3" style="display:none;">
+        تاریخ: <input type="text" name="date3"><br>
+    </div>
+
+
+    <input type="checkbox" id="checkbox3" name="checkbox3" onchange="toggleDateInput('checkbox3', 'dateInput3')"> آیتم 3<br>
+    <div id="dateInput3" style="display:none;">
+        تاریخ: <input type="text" name="date3"><br>
+    </div>
+
+
+
+    <input type="checkbox" id="checkbox3" name="checkbox3" onchange="toggleDateInput('checkbox3', 'dateInput3')"> آیتم 3<br>
+    <div id="dateInput3" style="display:none;">
+        تاریخ: <input type="date" name="date3"><br>
+    </div>
+
+    <input type="button" value="ارسال" onclick="submitForm()">
+</form>
+
+<!-- بخش JavaScript -->
+<script>
+    // فانکشن برای نمایش و مخفی کردن ورودی تاریخ
+    function toggleDateInput(checkboxId, dateInputId) {
+        var checkbox = document.getElementById(checkboxId);
+        var dateInput = document.getElementById(dateInputId);
+
+        if (checkbox.checked) {
+            dateInput.style.display = "block";
+        } else {
+            dateInput.style.display = "none";
+        }
+    }
+
+    // فانکشن برای ارسال فرم به سرور
+    function submitForm() {
+        var formData = {
+            checkbox1: document.getElementById("checkbox1").checked,
+            checkbox2: document.getElementById("checkbox2").checked,
+            checkbox3: document.getElementById("checkbox3").checked,
+            checkbox4: document.getElementById("checkbox4").checked,
+            checkbox5: document.getElementById("checkbox5").checked,
+            checkbox6: document.getElementById("checkbox6").checked,
+            checkbox7: document.getElementById("checkbox7").checked,
+            checkbox8: document.getElementById("checkbox8").checked,
+            checkbox9: document.getElementById("checkbox9").checked,
+            checkbox10: document.getElementById("checkbox10").checked,
+            checkbox11: document.getElementById("checkbox11").checked,
+            checkbox12: document.getElementById("checkbox12").checked,
+            checkbox13: document.getElementById("checkbox13").checked,
+            checkbox13: document.getElementById("checkbox14").checked,
+
+
+
+            date1: document.getElementsByName("date1")[0].value,
+            date2: document.getElementsByName("date2")[0].value,
+            date3: document.getElementsByName("date3")[0].value
+        };
+
+        // ایجاد یک فرم مخفی برای ارسال داده‌ها به سمت سرور
+        var hiddenForm = document.createElement("form");
+        hiddenForm.method = "post";
+        hiddenForm.action = "/NewHome/ProcessFormData"; // مسیر مورد نظر برای درخواست POST
+
+        // ایجاد یک المان input برای هر فیلد داده
+        for (var key in formData) {
+            var input = document.createElement("input");
+            input.type = "hidden"; // نوع المان input
+            input.name = key; // نام فیلد داده
+            input.value = formData[key]; // مقدار فیلد داده
+
+            // اضافه کردن المان input به فرم مخفی
+            hiddenForm.appendChild(input);
+        }
+
+        // اضافه کردن فرم مخفی به صفحه
+        document.body.appendChild(hiddenForm);
+
+        // ارسال فرم مخفی
+        hiddenForm.submit();
+    }
+</script>
