@@ -31,25 +31,25 @@ namespace NewWeb.Controllers
             // دریافت داده‌های فرم از درخواست POST
             bool checkbox1 = Convert.ToBoolean(Request.Form["checkbox1"]);
             bool checkbox2 = Convert.ToBoolean(Request.Form["checkbox2"]);
-            bool checkbox3 = Convert.ToBoolean(Request.Form["checkbox3"]);
-            bool checkbox1 = Convert.ToBoolean(Request.Form["checkbox1"]);
-            bool checkbox2 = Convert.ToBoolean(Request.Form["checkbox2"]);
-            bool checkbox3 = Convert.ToBoolean(Request.Form["checkbox3"]);
-            bool checkbox1 = Convert.ToBoolean(Request.Form["checkbox1"]);
-            bool checkbox2 = Convert.ToBoolean(Request.Form["checkbox2"]);
-            bool checkbox3 = Convert.ToBoolean(Request.Form["checkbox3"]);
-            bool checkbox1 = Convert.ToBoolean(Request.Form["checkbox1"]);
-            bool checkbox2 = Convert.ToBoolean(Request.Form["checkbox2"]);
-            bool checkbox3 = Convert.ToBoolean(Request.Form["checkbox3"]);
-            bool checkbox1 = Convert.ToBoolean(Request.Form["checkbox1"]);
-            bool checkbox2 = Convert.ToBoolean(Request.Form["checkbox2"]);
-            bool checkbox3 = Convert.ToBoolean(Request.Form["checkbox3"]);
-            bool checkbox3 = Convert.ToBoolean(Request.Form["checkbox3"]);
+            //bool checkbox3 = Convert.ToBoolean(Request.Form["checkbox3"]);
+            //bool checkbox1 = Convert.ToBoolean(Request.Form["checkbox1"]);
+            //bool checkbox2 = Convert.ToBoolean(Request.Form["checkbox2"]);
+            //bool checkbox3 = Convert.ToBoolean(Request.Form["checkbox3"]);
+            //bool checkbox1 = Convert.ToBoolean(Request.Form["checkbox1"]);
+            //bool checkbox2 = Convert.ToBoolean(Request.Form["checkbox2"]);
+            //bool checkbox3 = Convert.ToBoolean(Request.Form["checkbox3"]);
+            //bool checkbox1 = Convert.ToBoolean(Request.Form["checkbox1"]);
+            //bool checkbox2 = Convert.ToBoolean(Request.Form["checkbox2"]);
+            //bool checkbox3 = Convert.ToBoolean(Request.Form["checkbox3"]);
+            //bool checkbox1 = Convert.ToBoolean(Request.Form["checkbox1"]);
+            //bool checkbox2 = Convert.ToBoolean(Request.Form["checkbox2"]);
+            //bool checkbox3 = Convert.ToBoolean(Request.Form["checkbox3"]);
+            //bool checkbox3 = Convert.ToBoolean(Request.Form["checkbox3"]);
 
 
 
 
-            var vehicleList = PlanningDBcontax.Tblvehicle.Where(u => !checkbox1 || u.Ok4St == checkbox1).ToArray();
+            var vehicleList = PlanningDBcontax.Tblvehicle.Where(u => !checkbox1 && u.Ok4St == checkbox1).ToArray();
 
 
 
@@ -64,6 +64,11 @@ namespace NewWeb.Controllers
             // در اینجا می‌توانید با داده‌ها عملیات مورد نظر خود را انجام دهید
 
             return Content("عملیات با موفقیت انجام شد");
+        }
+
+        public IActionResult gozaresh_filter()
+        {
+            return View();
         }
 
     }
