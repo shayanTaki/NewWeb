@@ -13,62 +13,93 @@
         <script src="~/js/persianDatepicker.min.js"></script>
         <script>
             $(function () {
-                $("#input1").persianDatepicker();
+                $("#dateInput33").persianDatepicker();
+            });
+            $(function () {
+                $("#dateInput44").persianDatepicker();
+            });
+            $(function () {
+                $("#dateInput55").persianDatepicker();
+            });
+            $(function () {
+                $("#dateInput66").persianDatepicker();
+            });
+            $(function () {
+                $("#dateInput77").persianDatepicker();
             });
         </script>
+        <style>
+            #myForm{
+                color:white;
+            }
+        </style>
 
     }
 
 
 </head>
 <body>
-   
 
-    
+    @section tr{
+
+        <tr>
+            <td class="table-headers">1         </td>
+            <td class="table-headers">1</td>
+            <td class="table-headers">1</td>
+            <td class="table-headers">1</td>
+            <td class="table-headers">1</td>
+            <td class="table-headers">1</td>
+            <td class="table-headers">1</td>
+            <td class="table-headers">1</td>
+            <td class="table-headers">1</td>
+            <td class="table-headers">1</td>
+        </tr>
+    }
+
 
     @section filter{
 
         <form id="myForm">
             <!-- چک باکس 1 -->
-            <input type="checkbox" id="checkbox1" name="checkbox1" onchange="toggleDateInput('checkbox1', 'dateInput1')"> آیتم 1<br>
+            <input type="checkbox" id="checkbox1" name="checkbox1" onchange="toggleDateInput('checkbox1', 'dateInput1')"> VIN<br>
             <div id="dateInput1" style="display:none;">
-                تاریخ: <input id="input1" type="text" name="date1"><br>
+                VIN : <input type="text" name="date1"><br>
             </div>
 
             <!-- چک باکس 2 -->
-            <input type="checkbox" id="checkbox2" name="checkbox2" onchange="toggleDateInput('checkbox2', 'dateInput2')"> آیتم 2<br>
+            <input type="checkbox" id="checkbox2" name="checkbox2" onchange="toggleDateInput('checkbox2', 'dateInput2')">Type<br>
             <div id="dateInput2" style="display:none;">
-                تاریخ: <input type="text" name="date2"><br>
+                Type : <input type="text" name="date2"><br>
             </div>
 
             <!-- چک باکس 3 -->
-            <input type="checkbox" id="checkbox3" name="checkbox3" onchange="toggleDateInput('checkbox3', 'dateInput3')"> آیتم 3<br>
+            <input type="checkbox" id="checkbox3" name="checkbox3" onchange="toggleDateInput('checkbox3', 'dateInput3')">MetalFinish<br>
             <div id="dateInput3" style="display:none;">
-                تاریخ: <input type="text" name="date3"><br>
+                تاریخ: <input id="dateInput33" type="text" name="date3"><br>
             </div>
 
-            @*<input type="checkbox" id="checkbox3" name="checkbox3" onchange="toggleDateInput('checkbox3', 'dateInput3')"> آیتم 3<br>
-                <div id="dateInput3" style="display:none;">
-                    تاریخ: <input type="text" name="date3"><br>
-                </div>
+            <input type="checkbox" id="checkbox4" name="checkbox4" onchange="toggleDateInput('checkbox4', 'dateInput4')"> TopCoat<br>
+            <div id="dateInput4" style="display:none;">
+                تاریخ: <input id="dateInput44" type="text" name="date4"><br>
+            </div>
 
-                <input type="checkbox" id="checkbox3" name="checkbox3" onchange="toggleDateInput('checkbox3', 'dateInput3')"> آیتم 3<br>
-                <div id="dateInput3" style="display:none;">
-                    تاریخ: <input type="text" name="date3"><br>
-                </div>
-
-
-                <input type="checkbox" id="checkbox3" name="checkbox3" onchange="toggleDateInput('checkbox3', 'dateInput3')"> آیتم 3<br>
-                <div id="dateInput3" style="display:none;">
-                    تاریخ: <input type="text" name="date3"><br>
-                </div>
+            <input type="checkbox" id="checkbox5" name="checkbox5" onchange="toggleDateInput('checkbox5', 'dateInput5')">مکانیکی<br>
+            <div id="dateInput5" style="display:none;">
+                تاریخ: <input id="dateInput55" type="text" name="date5"><br>
+            </div>
 
 
+            <input type="checkbox" id="checkbox6" name="checkbox6" onchange="toggleDateInput('checkbox6', 'dateInput6')">FinalTrim<br>
+            <div id="dateInput6" style="display:none;">
+                تاریخ: <input id="dateInput66" type="text" name="date6"><br>
+            </div>
 
-                <input type="checkbox" id="checkbox3" name="checkbox3" onchange="toggleDateInput('checkbox3', 'dateInput3')"> آیتم 3<br>
-                <div id="dateInput3" style="display:none;">
-                    تاریخ: <input type="date" name="date3"><br>
-                </div>*@
+
+
+            <input type="checkbox" id="checkbox7" name="checkbox7" onchange="toggleDateInput('checkbox7', 'dateInput7')"> Trans<br>
+        <div id="dateInput7" style="display:none;">
+            تاریخ: <input id="dateInput77" type="text" name="date7"><br>
+        </div>
 
             <input type="button" value="ارسال" onclick="submitForm()">
         </form>
@@ -90,13 +121,13 @@
             // فانکشن برای ارسال فرم به سرور
             function submitForm() {
                 var formData = {
-                    checkbox1: document.getElementById("checkbox1").checked,
-                    checkbox2: document.getElementById("checkbox2").checked,
-                    checkbox3: document.getElementById("checkbox3").checked,
-                    //checkbox4: document.getElementById("checkbox4").checked,
-                    //checkbox5: document.getElementById("checkbox5").checked,
-                    //checkbox6: document.getElementById("checkbox6").checked,
-                    //checkbox7: document.getElementById("checkbox7").checked,
+                    Vin: document.getElementById("checkbox1").checked,
+                    Type: document.getElementById("checkbox2").checked,
+                    MainLine: document.getElementById("checkbox3").checked,
+                    enterBIW: document.getElementById("checkbox4").checked,
+                    ExitChassis: document.getElementById("checkbox5").checked,
+                    FinalTrim: document.getElementById("checkbox6").checked,
+                    Trans: document.getElementById("checkbox7").checked,
                     //checkbox8: document.getElementById("checkbox8").checked,
                     //checkbox9: document.getElementById("checkbox9").checked,
                     //checkbox10: document.getElementById("checkbox10").checked,
@@ -107,9 +138,13 @@
 
 
 
-                    date1: document.getElementsByName("date1")[0].value,
-                    date2: document.getElementsByName("date2")[0].value,
-                    date3: document.getElementsByName("date3")[0].value
+                    VinData: document.getElementsByName("date1")[0].value,
+                    TypeData: document.getElementsByName("date2")[0].value,
+                    MainLineData: document.getElementsByName("date3")[0].value,
+                    enterBIWdata: document.getElementsByName("date4")[0].value,
+                    ExitChassisData: document.getElementsByName("date5")[0].value,
+                    FinalTrimData: document.getElementsByName("date6")[0].value,
+                    TransData: document.getElementsByName("date7")[0].value
                 };
 
                 // ایجاد یک فرم مخفی برای ارسال داده‌ها به سمت سرور

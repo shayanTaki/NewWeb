@@ -15,7 +15,7 @@
     <script src="~/js/site.js"></script>
     @*<script type="text/javascript" src="assets/JQuery/code.jquery.com_jquery-3.7.0.min.js"></script>*@
 
-    @RenderSection("head")
+    
 
 </head>
 <body>
@@ -324,186 +324,29 @@
     <!-- آیین این اون بخشی هست که قسمت میانی کارت ها و تیبل ها توش هست -->
     <section class="MainSec">
         <!-- cards section -->
-        <div class="CardsSec">
-            <!-- title for cards -->
-            <h3 class="SecTitle">@ViewBag.vin & @ViewBag.ExtPDI</h3>
-            <!-- Cards container -->
-            <div class="cards">
-                <div class="card BDkmc">
-                    <!-- row 1 (data view) -->
-                    <div class="dataView">
-                        <!-- data Icon -->
-                        <img src="~/images/AeenImage/BodyIcon.svg" alt="BodyIcon">
-                        <!-- data -->
-                        <p>34</p>
-                        <!-- data description -->
-                        <span>
-                            بدنه های
-                            <br> تولیدی
-                            <br> کرمان موتور
-                        </span>
-                    </div>
-                    <!-- row 2 (data status) -->
-                    <div class="stutsView">
-                        <!-- data value -->
-                        <p class="Data-Value">↘2.84%</p>
-                        <!-- data description -->
-                        <span>نسبت به روز گذشته</span>
-                    </div>
+        <div class="table-container">
+            <div class='mv_table'>
+                <div class='accordian_content'>
                 </div>
-                <div class="card BDcrmn">
-                    <!-- row 1 (data view) -->
-                    <div class="dataView">
-                        <!-- data Icon -->
-                        <img src="~/images/AeenImage/PiantShopIcon.svg" alt="BodyIcon">
-                        <!-- data -->
-                        <p>34</p>
-                        <!-- data description -->
-                        <span>
-                            بدنه های
-                            <br> تولیدی
-                            <br> کارمانیا
-                        </span>
-                    </div>
-                    <!-- row 2 (data status) -->
-                    <div class="stutsView">
-                        <!-- data value -->
-                        <p class="Data-Value">↘2.84%</p>
-                        <!-- data description -->
-                        <span>نسبت به روز گذشته</span>
-                    </div>
-                </div>
-                <div class="card PSkmc">
-                    <!-- row 1 (data view) -->
-                    <div class="dataView">
-                        <!-- data Icon -->
-                        <img src="~/images/AeenImage/PiantShopIcon.svg" alt="BodyIcon">
-                        <!-- data -->
-                        <p>30</p>
-                        <!-- data description -->
-                        <span>
-                            بدنه های
-                            <br> رنگ شده
-                            <br> کرمان موتور
-                        </span>
-                    </div>
-                    <!-- row 2 (data status) -->
-                    <div class="stutsView">
-                        <!-- data value -->
-                        <p class="Data-Value">↘2.84%</p>
-                        <!-- data description -->
-                        <span>نسبت به روز گذشته</span>
-                    </div>
-                </div>
-                <div class="card PSmvm">
-                    <!-- row 1 (data view) -->
-                    <div class="dataView">
-                        <!-- data Icon -->
-                        <img src="~/images/AeenImage/OutSourcingPaintIcon.svg" alt="BodyIcon">
-                        <!-- data -->
-                        <p>52</p>
-                        <!-- data description -->
-                        <span>
-                            بدنه های
-                            <br> رنگ شده
-                            <br> مدیران موتور
-                        </span>
-                    </div>
-                    <!-- row 2 (data status) -->
-                    <div class="stutsView">
-                        <!-- data value -->
-                        <p class="Data-Value">↘2.84%</p>
-                        <!-- data description -->
-                        <span>نسبت به روز گذشته</span>
-                    </div>
-                </div>
-                <div class="card PSsipa">
-                    <!-- row 1 (data view) -->
-                    <div class="dataView">
-                        <!-- data Icon -->
-                        <img src="~/images/AeenImage/OutSourcingPaintIcon.svg" alt="BodyIcon">
-                        <!-- data -->
-                        <p>65</p>
-                        <!-- data description -->
-                        <span>
-                            بدنه های
-                            <br> رنگ شده
-                            <br> سایپا
-                        </span>
-                    </div>
-                    <!-- row 2 (data status) -->
-                    <div class="stutsView">
-                        <!-- data value -->
-                        <p class="Data-Value">↘2.84%</p>
-                        <!-- data description -->
-                        <span>نسبت به روز گذشته</span>
-                    </div>
-                </div>
-                <div class="card TRMkmc">
-                    <!-- row 1 (data view) -->
-                    <div class="dataView">
-                        <!-- data Icon -->
-                        <img src="~/images/AeenImage/TrimIcon.svg" alt="BodyIcon">
-                        <!-- data -->
-                        <p>34</p>
-                        <!-- data description -->
-                        <span>
-                            بدنه های
-                            <br> مونتاژ شده
-                            <br> کرمان موتور
-                        </span>
-                    </div>
-                    <!-- row 2 (data status) -->
-                    <div class="stutsView">
-                        <!-- data value -->
-                        <p class="Data-Value">↘2.84%</p>
-                        <!-- data description -->
-                        <span>نسبت به روز گذشته</span>
-                    </div>
-                </div>
-                <div class="card TRMbmc">
-                    <!-- row 1 (data view) -->
-                    <div class="dataView">
-                        <!-- data Icon -->
-                        <img src="~/images/AeenImage/TrimIcon.svg" alt="BodyIcon">
-                        <!-- data -->
-                        <p>34</p>
-                        <!-- data description -->
-                        <span>
-                            بدنه های
-                            <br> مونتاژ شده
-                            <br> خودروسازان بم
-                        </span>
-                    </div>
-                    <!-- row 2 (data status) -->
-                    <div class="stutsView">
-                        <!-- data value -->
-                        <p class="Data-Value">↘2.84%</p>
-                        <!-- data description -->
-                        <span>نسبت به روز گذشته</span>
-                    </div>
-                </div>
-                <div class="card PRKkmc">
-                    <!-- row 1 (data view) -->
-                    <div class="dataView">
-                        <!-- data Icon -->
-                        <img src="~/images/AeenImage/BodyIcon.svg" alt="BodyIcon">
-                        <!-- data -->
-                        <p>34</p>
-                        <!-- data description -->
-                        <span>بدنه های  تولیدی</span>
-                    </div>
-                    <!-- row 2 (data status) -->
-                    <div class="stutsView">
-                        <!-- data value -->
-                        <p class="Data-Value">↘2.84%</p>
-                        <!-- data description -->
-                        <span>نسبت به روز گذشته</span>
-                    </div>
-                </div>
+                <table id='simple_table'>
+                    <tr class="table-row-header">
+                        <th class="table-headers">ردیف         </th>
+                        <th class="table-headers">شاسی         </th>
+                        <th class="table-headers">مدل          </th>
+                        <th class="table-headers">MetalFinish  </th>
+                        <th class="table-headers">Top Coat     </th>
+                        <th class="table-headers">Exit Chassis </th>
+                        <th class="table-headers">Final Trim   </th>
+                        <th class="table-headers">Qcst  </th>
+                        <th class="table-headers">Deliver ST  </th>
+                        <th class="table-headers">trans  </th>
 
+                    </tr>
+                    @RenderSection("tr")
+                </table>
             </div>
         </div>
+        <!-- title for cards -->
         @*<div class="tableSec">
                 <h3 class="SecTitle">جدول تولیدی</h3>
                 <div class="table-container">
@@ -596,9 +439,9 @@
     <!-- محمود این اون بخشی هست که قسمت اطلاعات یوزر توش هست -->
     <section class="UserPnl sidebar" id="mySidebar">
         <div class="UserPnlSec">
-            @RenderSection("filter")
-           </div>
-        
+           
+        </div>
+
     </section>
 </body>
 </html>

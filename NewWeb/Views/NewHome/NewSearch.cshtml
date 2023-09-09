@@ -1,0 +1,57 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+<head>
+    <meta charset="UTF-16">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/SearchNew.css">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h2>گزارشگیری توسط AI </h2>
+        <div class="form">
+            <div class="maininput">
+                <ul class="search">
+                    <input type="text">
+                    <div class="tags">
+                    <li class="defualt">گزارش <img src="assets/images/xIcon.svg" alt=""></li>
+            </div>
+            </ul>
+        </div>
+        <button onclick="findingVIrtualtype()" name="someName" value="someValue"><img src="assets/images/search.svg" alt=""></button>
+    </div>
+
+
+    </div>
+    <div class="hidenform" style="display:block;">
+        <form >
+
+            <!-- virtual type check box -->
+            <input type="checkbox" id="virtualTypeBox" name="virtualTypeBox" onchange="toggleDateInput('virtualTypeBox', 'virtualTypeBoxValue')">virtualType<br>
+            <div id="virtualTypeBoxValue">
+                virtualType : <input id="input1" type="text" name="virtualTypeBoxValue"><br>
+            </div>
+
+            <!-- Mainline check box -->
+            <input type="checkbox" id="metalFinishBox" name="metalFinishBox" onchange="toggleDateInput('metalFinishBox', 'metalFinishDate')"> بدنه :<br>
+            <div id="metalFinishDate">
+                تاریخ سالن بدنه: <input type="text" name="metalFinishDate"><br>
+            </div>
+
+            <!-- Topcoat check box -->
+            <input type="checkbox" id="TopcoatBox" name="TopcoatBox" onchange="toggleDateInput('TopcoatBox', 'TopcoatDate')"> رنگ :<br>
+            <div id="TopcoatDate">
+                تاریخ سالن رنگ: <input type="text" name="TopcoatDate"><br>
+            </div>
+
+            <input type="button" value="ارسال" onclick="submitForm()">
+        </form>
+
+    </div>
+    <script src="~/js/js2.js"></script>
+
+</body>
+</html>

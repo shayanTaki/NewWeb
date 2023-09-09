@@ -1,0 +1,43 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+
+@{
+    Layout = "_SearchNew";
+}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+
+</head>
+<body>
+
+    @section tr {
+        @foreach (var item in ViewBag.vehicleList1)
+        {
+            <tr>
+                <td class="table-headers">1</td>
+                <td class="table-headers">@item.vin</td>
+                <td class="table-headers">@item.Type</td>
+                <td class="table-headers">@item.MetalFinish</td>
+                <td class="table-headers">@item.TopCoat</td>
+                <td class="table-headers">@item.ExitChassis</td>
+                <td class="table-headers">@item.FinalTrim</td>
+                <td class="table-headers">@item.QcSt</td>
+                <td class="table-headers">@item.DeliverSt</td>
+                <td class="table-headers">@item.Trans</td>
+            </tr>
+        }
+    }
+
+
+   
+
+        <!-- بخش JavaScript -->
+        
+
+</body>
+</html>
