@@ -144,23 +144,40 @@ namespace NewWeb.Controllers
                 }
             }
 
+            var Bank = PlanningDBcontax.Tblvehicle.ToArray();
+            var mashtork = PlanningDBcontax.Tblvehicle.ToArray();
+            if (TypeN != null)
+            {
+                mashtork = mashtork.Intersect(TypeN).ToArray();
+            }
+            if (metalN != null)
+            {
+                mashtork = mashtork.Intersect(metalN).ToArray();
+            }
+
+            if (ExitN != null)
+            {
+                mashtork = mashtork.Intersect(ExitN).ToArray();
+            }
+
+            if (FinalN != null)
+            {
+                mashtork = mashtork.Intersect(FinalN).ToArray();
+            }
+
+            if (TransN != null)
+            {
+                mashtork = mashtork.Intersect(TransN).ToArray();
+            }
+
 
             
 
 
 
-            if (TypeN != null)
-            {
-                var TypeO = TypeN;
-            }
-            else if(metalN != null)
-            {
-                var metalO = metalN;
-            }
-            else if(ex)
             // انجام عملیات پردازش بر روی داده‌های دریافتی
             // در اینجا می‌توانید با داده‌ها عملیات مورد نظر خود را انجام دهید
-            ViewBag.vehicleList = vin1;
+            ViewBag.vehicleList = mashtork;
             return View("gozaresh_filterPost");
         }
 
