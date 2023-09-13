@@ -43,7 +43,7 @@
     @section tr{
 
         <tr>
-            <td class="table-headers">1         </td>
+            <td class="table-headers">1</td>
             <td class="table-headers">1</td>
             <td class="table-headers">1</td>
             <td class="table-headers">1</td>
@@ -61,47 +61,47 @@
 
         <form id="myForm">
             <!-- چک باکس 1 -->
-            <input type="checkbox" id="checkbox1" name="checkbox1" onchange="toggleDateInput('checkbox1', 'dateInput1')"> VIN<br>
+            <input class="chekbox" type="checkbox" id="checkbox1" name="checkbox1" onchange="toggleDateInput('checkbox1', 'dateInput1')"> VIN<br>
             <div id="dateInput1" style="display:none;">
                 VIN : <input type="text" name="date1"><br>
             </div>
 
             <!-- چک باکس 2 -->
-            <input type="checkbox" id="checkbox2" name="checkbox2" onchange="toggleDateInput('checkbox2', 'dateInput2')">Type<br>
+            <input class="chekbox" type="checkbox" id="checkbox2" name="checkbox2" onchange="toggleDateInput('checkbox2', 'dateInput2')">Type<br>
             <div id="dateInput2" style="display:none;">
                 Type : <input type="text" name="date2"><br>
             </div>
 
             <!-- چک باکس 3 -->
-            <input type="checkbox" id="checkbox3" name="checkbox3" onchange="toggleDateInput('checkbox3', 'dateInput3')">MetalFinish<br>
+            <input class="chekbox" type="checkbox" id="checkbox3" name="checkbox3" onchange="toggleDateInput('checkbox3', 'dateInput3')">سالن بدنه<br>
             <div id="dateInput3" style="display:none;">
                 تاریخ: <input id="dateInput33" type="text" name="date3"><br>
             </div>
 
-            <input type="checkbox" id="checkbox4" name="checkbox4" onchange="toggleDateInput('checkbox4', 'dateInput4')"> TopCoat<br>
+            <input class="chekbox" type="checkbox" id="checkbox4" name="checkbox4" onchange="toggleDateInput('checkbox4', 'dateInput4')"> سالن رنگ<br>
             <div id="dateInput4" style="display:none;">
                 تاریخ: <input id="dateInput44" type="text" name="date4"><br>
             </div>
 
-            <input type="checkbox" id="checkbox5" name="checkbox5" onchange="toggleDateInput('checkbox5', 'dateInput5')">مکانیکی<br>
+            <input class="chekbox" type="checkbox" id="checkbox5" name="checkbox5" onchange="toggleDateInput('checkbox5', 'dateInput5')">مکانیکی<br>
             <div id="dateInput5" style="display:none;">
                 تاریخ: <input id="dateInput55" type="text" name="date5"><br>
             </div>
 
 
-            <input type="checkbox" id="checkbox6" name="checkbox6" onchange="toggleDateInput('checkbox6', 'dateInput6')">FinalTrim<br>
+            <input class="chekbox" type="checkbox" id="checkbox6" name="checkbox6" onchange="toggleDateInput('checkbox6', 'dateInput6')">سالن تزِینات<br>
             <div id="dateInput6" style="display:none;">
                 تاریخ: <input id="dateInput66" type="text" name="date6"><br>
             </div>
 
 
 
-            <input type="checkbox" id="checkbox7" name="checkbox7" onchange="toggleDateInput('checkbox7', 'dateInput7')"> Trans<br>
+            <input class="chekbox" type="checkbox" id="checkbox7" name="checkbox7" onchange="toggleDateInput('checkbox7', 'dateInput7')"> Trans<br>
         <div id="dateInput7" style="display:none;">
             تاریخ: <input id="dateInput77" type="text" name="date7"><br>
         </div>
 
-            <input type="button" value="ارسال" onclick="submitForm()">
+            <input id="submitBtn" type="button" value="ارسال" onclick="submitForm()">
         </form>
 
         <!-- بخش JavaScript -->

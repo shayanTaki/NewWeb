@@ -331,6 +331,7 @@ body {
     display: flex;
     width: 100%;
     flex-direction: column;
+   /*align-items:center;*/
 }
 
 .CardsSec {
@@ -459,12 +460,13 @@ body {
 
 /* .table-container {
     display: table;
-  }
+  }*/
 .table-row-header {
-    display: table-row;
-    gap: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 1;
 }
-.table-headers{
+/*.table-headers{
     display: table-cell;
     background-color: #444;
     padding-left: 1rem;
@@ -516,7 +518,11 @@ body {
     margin: 2px;
     border-radius: 8px;
 }
+.mv_table{
 
+    height:98vh;
+    overflow:auto;
+}
 .mv_table .panel {
     padding: 0 18px;
     background-color: #FFFFFF;
@@ -726,15 +732,42 @@ body {
 }
 
 
+/*##################################################################################################################################*/
+.chekbox {
+    border-radius: 50%;
+    width: 2vh;
+    height: 2vh;
+    background-color: #32363B;
+    margin: 1.5vh;
+    transition: 300ms ease;
+}
+#myForm > div {
+    display:inline-flex;
+    flex-direction:row;
+    transition: 300ms ease;
+    border-radius:1rem;
+    background-color: #32363B;
+    padding: 1.5vh;
+}
+#myForm > div > input {
+    color:aliceblue;
+    width:auto;
+        border:none;
+        outline-offset: 0;
+        background-color: #32363B;
+}
+#submitBtn {
+    border-radius: 1rem;
+    width: auto;
+    height: auto;
+    background-color: #53eaff;
+    margin: 1.5vh;
+    color: #272B2F;
+    border:none;
+    padding: 1vh 2vh;
+    font-weight: 900;
+}
 /* ******************************************* Responsive section *************************************************** */
-
-
 @media only screen and (max-width: 600px) {
-
     /* این بخش رو بعد ادیت کنید */
-
-
-
-
-
 }

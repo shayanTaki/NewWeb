@@ -15,6 +15,7 @@ var virtualTypesObj = [
 ];
 var BodyShopObj = ["metalfinish", "Metalfinish", "METALFINISH", "MetalFinish", "بدنه", "سالنبدنه"];
 var PaintShopObj = ["topcoat", "TopCoat", "Topcoat", "رنگ", "رنگشده", "سالنرنگ"];
+
 // var virtualTypesNames = virtualTypesObj.map(elements => {
 //     return elements.name
 // });
@@ -34,7 +35,7 @@ var vitualtypeRes;
 function createTag() {
     ul.querySelectorAll("li").forEach(li => li.remove(),);
     tags.forEach(tag => {
-        let Litag = `<li class="defualt">${tag}<img src="assets/images/xIcon.svg" onclick="remove(this, '${tag}')" alt=""></li>`;
+        let Litag = `<li class="defualt">${tag} <imgsrc="~/images/search.svg" onclick="remove(this, '${tag}')" alt=""></li>`;
         ul.insertAdjacentHTML("afterbegin", Litag);
     });
 }

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using NewWeb.Models;
 using System;
@@ -19,12 +20,16 @@ namespace NewWeb.Controllers
             this.ContaxDBlogin = ContaxDBlogin;
             this.PlanningDBcontax = PlanningDBcontax;
         }
-        
+
         public IActionResult Index()
         {
-            return View();
-        }
+         
+                return View();
+        
+           
 
+
+        }
 
 
         [HttpPost]
@@ -172,13 +177,13 @@ namespace NewWeb.Controllers
 
             /////////////////////////////////////////////////////////////////////////////////////////
             ///
-            var mashtork = PlanningDBcontax.Tblvehicle.Where(x => x.VirtualType == TypeData).ToArray();
+            var mashtork = PlanningDBcontax.Tblvehicle.Where(x => x.VirtualType == TypeData ).ToArray();
 
             if (Vin)
             {
-               var mashtork2 = PlanningDBcontax.Tblvehicle.FirstOrDefault(x => x.vin ==VinData);
-                ViewBag.vehicleList = mashtork;
-                return View("gozaresh_filterPost");
+               var mashtork2 = PlanningDBcontax.Tblvehicle.FirstOrDefault(x => x.vin == VinData);
+                ViewBag.vehicleList = mashtork2;
+                return View("gozaresh_filterPostVin");
             }
 
             if (MetalFinish)
@@ -210,32 +215,40 @@ namespace NewWeb.Controllers
             return View("gozaresh_filterPost");
         }
 
-        public IActionResult gozaresh_filter()
+       
+        public IActionResult NewSearch()
         {
             return View();
         }
-        //public IActionResult NewSearch()
-        //{
-        //    return View();
-        //}
-        //[HttpPost]
-        //public IActionResult NewSearchPost()
-        //{
-        //    bool virtualTypeBox = Convert.ToBoolean(Request.Form["virtualTypeBox"]);
-        //    bool metalFinishBox = Convert.ToBoolean(Request.Form["metalFinishBox"]);
-        //    bool TopcoatBox = Convert.ToBoolean(Request.Form["TopcoatBox"]);
-
-
+        [HttpPost]
+        public IActionResult NewSearchPost()
+        {
            
+            bool virtualTypeBox = Convert.ToBoolean(Request.Form["virtualTypeBox"]);
+            bool metalFinishBox = Convert.ToBoolean(Request.Form["metalFinishBox"]);
+            bool TopcoatBox = Convert.ToBoolean(Request.Form["TopcoatBox"]);
 
-        //    string virtualTypeBoxValue1 = Request.Form["virtualTypeBoxValue"];
-        //    string metalFinishDate1 = Request.Form["metalFinishDate"];
-        //    string TopcoatDate1 = Request.Form["TopcoatDate"];
 
-        //    var vin2 = PlanningDBcontax.Tblvehicle.Where(x => virtualTypeBox && x.VirtualType == virtualTypeBoxValue1 || metalFinishBox && x.MetalFinish == metalFinishDate1 || TopcoatBox && x.TopCoat == TopcoatDate1).ToArray();
-        //    ViewBag.vehicleList1 = vin2;
-        //    return View();
-        //}
+
+
+            string virtualTypeBoxValue1 = Request.Form["virtualTypeBoxValue"];
+            string metalFinishDate1 = Request.Form["metalFinishDate"];
+            string TopcoatDate1 = Request.Form["TopcoatDate"];
+
+            var mashtork = PlanningDBcontax.Tblvehicle.Where(x => x.VirtualType == virtualTypeBoxValue1).ToArray();
+
+            if (metalFinishBox)
+            {
+                mashtork = mashtork.Where(u => u.MetalFinish == metalFinishDate1).ToArray();
+            }
+
+            if (TopcoatBox)
+            {
+                mashtork = mashtork.Where(u => u.TopCoat == TopcoatDate1).ToArray();
+            }
+            ViewBag.vehicleList1 = mashtork;
+            return View();
+        }
 
 
         [HttpPost]

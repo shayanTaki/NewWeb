@@ -17,16 +17,16 @@
                 <ul class="search">
                     <input type="text">
                     <div class="tags">
-                    <li class="defualt">گزارش <img src="assets/images/xIcon.svg" alt=""></li>
+                    <li class="defualt">گزارش <img src="~/images/xIcon.svg" alt=""></li>
             </div>
             </ul>
         </div>
-        <button onclick="findingVIrtualtype()" name="someName" value="someValue"><img src="assets/images/search.svg" alt=""></button>
+        <button onclick="findingVIrtualtype(); submitForm()" name="someName" value="someValue"></button>
     </div>
 
 
     </div>
-    <div class="hidenform" style="display:block;">
+    <div class="hidenform" style="display:none;">
         <form >
 
             <!-- virtual type check box -->
@@ -47,7 +47,7 @@
                 تاریخ سالن رنگ: <input type="text" name="TopcoatDate"><br>
             </div>
 
-            <input type="button" value="ارسال" onclick="submitForm()">
+            <input type="button" value="ارسال" onclick="">
         </form>
 
     </div>
